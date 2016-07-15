@@ -1,0 +1,38 @@
+#!/bin/bash
+
+echo ""
+echo "############################################################################################"
+echo "# ATENCION: El siguiente script eliminará .git para que pueda agregar otro proyecto remoto #"
+echo "############################################################################################"
+echo ""
+
+read -r -p "Esta seguro? [s/N] " response
+case $response in
+    s)
+        echo "Procedo..."
+        echo "# Eliminando .git"
+        rm -rfv .git
+
+        echo ""
+        echo "# Recuerde iniciar un proyecto"
+        echo "$ git init"
+        echo "$ git remote add origin https://repo/proyecto.git"
+
+        echo ""
+        echo "# Recuerde configurar su usuario y correo de git"
+        echo "$ git config --global user.name 'Nombre Apellido'"
+        echo "$ git config --global user.email 'mail@dominio'"
+
+        echo ""
+        echo "# Recuerde configurar su base de datos"
+        echo "database: default_db"
+        echo "db user: default_user"
+        echo "db pass: kve45vm"
+
+        ;;
+
+    *)
+        echo "Saliendo..."
+        exit 0
+        ;;
+esac
